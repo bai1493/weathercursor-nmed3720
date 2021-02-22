@@ -1,0 +1,1 @@
+# Weather Cursor Chrome Extension
