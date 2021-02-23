@@ -1,7 +1,7 @@
 {
     "manifest_version": 2, 
-    "name": "UPDATE: Name of your plugin",
-    "description": "UPDATE: Description of your plugin",
+    "name": "Weather Cursor Chrome Extension",
+    "description": "Cursor will change depending on the weather.",
     "version": "1.0",
     "permissions": ["activeTab"],
     "content_scripts": [
@@ -20,6 +20,7 @@
     },
     "web_accessible_resources": [ 
         "images/*.jpg",
-        "images/*.png" 
+        "images/*.png",
+        "images/*.svg" 
      ] 
 }

@@ -1,7 +1,46 @@
-console.log("extension is running!")
+function getWeather(){
+    let temperature = document.getElementById("temperature");
+    let description = document.getElementById("description");
+    let location = document.getElementById("location");
 
-// TRY: updating the text content of an element or set of elements on one or more pages
 
-// TRY: adding a click event listener to an element that changes the background of that element to a new color
 
-// TRY: using a mouseenter event listener to update text to something new.
+let api = "https://api.openweathermap.org/data/2.5/weather";
+let apiKey = "df74fb893028a4185e13b69b55b7db46";
+
+navigator.geolocation.getCurrentPosition(success, error);
+
+function success(position){
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+    
+    let url =
+      api +
+      "?lat=" +
+      latitude +
+      "&lon=" +
+      longitude +
+      "&appid=" +
+      apiKey +
+      "&units=metric";
+    
+    fetch(url)
+        .then(response => response.json())
+          .then(data => {
+        console.log(data);
+        let temp = data.main.temp;
+        temperature.innerHTML = temp + "° C";
+        location.innerHTML =
+          data.name + " (" + latitude + "°, " + longitude + "°)";
+        description.innerHTML = data.weather[0].main;
+      });
+}
+
+function error(){
+    location.innerHTML = "Cannot get your location";
+}
+}
+getWeather()
+
+
+//console.log('api.openweathermap.org/data/2.5/weather?id=6053154&callback=test&appid=df74fb893028a4185e13b69b55b7db46&units=metric')
