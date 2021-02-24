@@ -1,3 +1,17 @@
-body {
-    background-color: lightpink;
+body{
+    background-color: #ddd3ee;
 }
+
+
+#weather {
+    font-family: "Akaya Kanadaka", cursive;
+    text-align: right;
+    color: #4B0082;
+}
+
+.icondesc{
+    display: inline-flex;
+}
+
+
+

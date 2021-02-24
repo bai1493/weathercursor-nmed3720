@@ -1,7 +1,7 @@
 {
     "manifest_version": 2, 
-    "name": "Weather Cursor Chrome Extension",
-    "description": "Cursor will change depending on the weather.",
+    "name": "Weather Chrome Extension",
+    "description": "Click on icon for realtime weather based on your location.",
     "version": "1.0",
     "permissions": ["activeTab", "geolocation"],
     "content_scripts": [
@@ -14,7 +14,7 @@
      ],
     "action": {
         "default_icon": {
-            "32":"images/weather-01.png"
+            "32":"images/icon.png"
         },
         "default_popup": "popup.html"
     },

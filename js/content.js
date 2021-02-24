@@ -8,16 +8,7 @@ let api = "https://api.openweathermap.org/data/2.5/weather";
 let apiKey = "df74fb893028a4185e13b69b55b7db46";
 
 navigator.geolocation.getCurrentPosition(success, error);
-    
-    
-navigator.permissions.query({name:'geolocation'})
-  .then(function(permissionStatus) {
-    console.log('geolocation permission state is ', permissionStatus.state);
-
-    permissionStatus.onchange = function() {
-      console.log('geolocation permission state has changed to ', this.state);
-    };
-  });    
+   
 
 function success(position){
     latitude = position.coords.latitude;
@@ -52,20 +43,18 @@ var imageShown = "http://openweathermap.org/img/wn/" + iconCode + "@2x.png";
    
 document.getElementById('icons').src = imageShown;
 
-        
-$("header").before("imageShown");        
       });
    
 }  
  
+ 
+    
     
 function error(){
     location.innerHTML = "Cannot get your location";
 }
 }
 getWeather()
-
-
 
 
 
