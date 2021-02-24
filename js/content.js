@@ -2,7 +2,7 @@ function getWeather(){
     let temperature = document.getElementById("temperature");
     let description = document.getElementById("description");
     let location = document.getElementById("location");
-
+    let icon = document.getElementById("icon");
 
 
 let api = "https://api.openweathermap.org/data/2.5/weather";
@@ -33,6 +33,7 @@ function success(position){
         location.innerHTML =
           data.name + " (" + latitude + "°, " + longitude + "°)";
         description.innerHTML = data.weather[0].main;
+        icon.innerHTML = data.weather[0].icon;
       });
 }
 
@@ -41,6 +42,3 @@ function error(){
 }
 }
 getWeather()
-
-
-//console.log('api.openweathermap.org/data/2.5/weather?id=6053154&callback=test&appid=df74fb893028a4185e13b69b55b7db46&units=metric')
