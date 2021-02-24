@@ -46,14 +46,15 @@ function success(position){
         description.innerHTML = data.weather[0].main;
         
 var iconCode = data.weather[0].icon
-var iconurl = "http://openweathermap.org/img/wn/" + iconCode + "@2x.png";
-        icon.innerHTML = iconurl;
-       //icon.innerHTML = data.weather[0].icon;
+var imageShown = "http://openweathermap.org/img/wn/" + iconCode + "@2x.png";
+
+   
+document.getElementById('icons').src = imageShown;
+
       });
-}
-    
+   
+}  
  
-    
     
 function error(){
     location.innerHTML = "Cannot get your location";

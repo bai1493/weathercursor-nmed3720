@@ -14,7 +14,7 @@
      ],
     "action": {
         "default_icon": {
-            "32":"/images/icon.png"
+            "32":"images/weather-01.png"
         },
         "default_popup": "popup.html"
     },

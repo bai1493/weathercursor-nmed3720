@@ -1,3 +1,3 @@
-#icon{
-    cursor: url("http://openweathermap.org/img/wn/" + Icon + "@2x.pngIcon");
+body{
+    cursor: url(../images/weather-01.png),auto !important;
 }
