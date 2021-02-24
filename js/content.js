@@ -3,6 +3,14 @@ function getWeather(){
     let description = document.getElementById("description");
     let location = document.getElementById("location");
     let icon = document.getElementById("icon");
+    var imageCollection = document.images;
+
+    for (a in imageCollection)
+{
+console.log(imageCollection[a])
+
+}
+
 
 
 let api = "https://api.openweathermap.org/data/2.5/weather";
@@ -24,6 +32,9 @@ function success(position){
       apiKey +
       "&units=metric";
     
+
+    
+    
     fetch(url)
         .then(response => response.json())
           .then(data => {
@@ -33,12 +44,25 @@ function success(position){
         location.innerHTML =
           data.name + " (" + latitude + "°, " + longitude + "°)";
         description.innerHTML = data.weather[0].main;
-        icon.innerHTML = data.weather[0].icon;
+        
+var iconCode = data.weather[0].icon
+var iconurl = "http://openweathermap.org/img/wn/" + iconCode + "@2x.png";
+        icon.innerHTML = iconurl;
+       //icon.innerHTML = data.weather[0].icon;
       });
 }
-
+    
+ 
+    
+    
 function error(){
     location.innerHTML = "Cannot get your location";
 }
 }
 getWeather()
+
+
+
+
+
+
