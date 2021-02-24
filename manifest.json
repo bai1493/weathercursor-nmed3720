@@ -3,7 +3,7 @@
     "name": "Weather Cursor Chrome Extension",
     "description": "Cursor will change depending on the weather.",
     "version": "1.0",
-    "permissions": ["activeTab"],
+    "permissions": ["activeTab", "geolocation"],
     "content_scripts": [
         {
             "matches": ["<all_urls>"],

@@ -3,20 +3,21 @@ function getWeather(){
     let description = document.getElementById("description");
     let location = document.getElementById("location");
     let icon = document.getElementById("icon");
-    var imageCollection = document.images;
-
-    for (a in imageCollection)
-{
-console.log(imageCollection[a])
-
-}
-
-
-
+    
 let api = "https://api.openweathermap.org/data/2.5/weather";
 let apiKey = "df74fb893028a4185e13b69b55b7db46";
 
 navigator.geolocation.getCurrentPosition(success, error);
+    
+    
+navigator.permissions.query({name:'geolocation'})
+  .then(function(permissionStatus) {
+    console.log('geolocation permission state is ', permissionStatus.state);
+
+    permissionStatus.onchange = function() {
+      console.log('geolocation permission state has changed to ', this.state);
+    };
+  });    
 
 function success(position){
     latitude = position.coords.latitude;
@@ -51,6 +52,8 @@ var imageShown = "http://openweathermap.org/img/wn/" + iconCode + "@2x.png";
    
 document.getElementById('icons').src = imageShown;
 
+        
+$("header").before("imageShown");        
       });
    
 }  
