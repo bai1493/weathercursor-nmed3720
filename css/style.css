@@ -1,10 +1,10 @@
 body{
-    background-color: #ddd3ee;
+    background-color: #ddd3ee !important;
 }
 
 
 #weather {
-    font-family: "Akaya Kanadaka", cursive;
+    font-family: "Akaya Kanadaka", cursive !important;
     text-align: right;
     color: #4B0082;
     padding: 10px;
